@@ -11,16 +11,23 @@ linkedlist = [
     [None, None]
 ]
 
-
 def traverse(linkedlist):
     if linkedlist[head][data] == None:
         print("List is empty")
         return
     current = head
     while current != None:
-        print(linkedlist[current][data])
+        save = current + 2
         current = linkedlist[current][pointer]
-    print("List is finished")
-    return
+    return save
 
-traverse(linkedlist)
+def add(linkedlist):
+    add = input("Input: ")
+    linkedlist[traverse(linkedlist)][data] = str(add)
+    linkedlist[traverse(linkedlist)][pointer] = None
+    print("List is finished\n")
+    print(linkedlist)
+    
+
+add(linkedlist)
+#need to fix the adding name part, current error is the added name replacing "Sharon"
