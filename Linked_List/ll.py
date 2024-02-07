@@ -19,15 +19,17 @@ def traverse(linkedlist):
     while current != None:
         save = current + 2
         current = linkedlist[current][pointer]
-    return save
+    return int(save)
 
 def add(linkedlist):
     add = input("Input: ")
-    linkedlist[traverse(linkedlist)][data] = str(add)
-    linkedlist[traverse(linkedlist)][pointer] = None
-    print("List is finished\n")
+    save = traverse(linkedlist)
+    linkedlist[save][data] = add
+    linkedlist[save][pointer] = None
+    #print("List is finished\n")
     print(linkedlist)
     
 
+add(linkedlist)
 add(linkedlist)
 #need to fix the adding name part, current error is the added name replacing "Sharon"
