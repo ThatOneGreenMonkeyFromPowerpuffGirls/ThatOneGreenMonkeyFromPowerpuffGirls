@@ -17,19 +17,46 @@ def traverse(linkedlist):
         return
     current = head
     while current != None:
-        save = current + 2
         current = linkedlist[current][pointer]
-    return int(save)
+
+def findprev(linkedlist):
+    for i in range(0,len(linkedlist)):
+        if linkedlist[i][data] != None and linkedlist[i][pointer] == None:
+            save2 = int(i)
+            return save2
+
+def freespace(linkedlist):
+    for i in range(0,len(linkedlist)):
+        if linkedlist[i][data] == None:
+            save = int(i)
+            return save
+
 
 def add(linkedlist):
     add = input("Input: ")
-    save = traverse(linkedlist)
-    linkedlist[save][data] = add
-    linkedlist[save][pointer] = None
+    freespot = freespace(linkedlist)
+    prevspot = findprev(linkedlist)
+    linkedlist[prevspot][pointer] = freespot
+    linkedlist[freespot][data] = add
+    linkedlist[freespot][pointer] = None
     #print("List is finished\n")
     print(linkedlist)
-    
+
+def delete(linkedlist):
+    print(linkedlist)
+    delete = input("Delete: ")
+    for i in range(0,len(linkedlist)):
+        if linkedlist[i][data] == delete:
+            save3 = linkedlist[i][pointer]
+    for i in range(0,len(linkedlist)):
+        if linkedlist[linkedlist[i][pointer]][pointer] == save3
+            save4 = i
+    linkedlist[save4][pointer] = save3
+    linkedlist[save3][data] = None
+    linkedlist[save3][pointer] = None
+    print(linkedlist)
+    #check if this works!
 
 add(linkedlist)
-add(linkedlist)
+delete(linkedlist)
 #need to fix the adding name part, current error is the added name replacing "Sharon"
