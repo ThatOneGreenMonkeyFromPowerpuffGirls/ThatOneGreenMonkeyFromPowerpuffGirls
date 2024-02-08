@@ -1,1 +1,1 @@
-./commit.sh [Title]
+./commit.sh "[Title]"
