@@ -1,9 +1,10 @@
 data = 0       #makes it conceptually easier to see
 pointer = 1
-head = 0
+head = 0      #change to change front of linked list
 
 print(f"Head is {str(head)}")
 
+#make sure linkedlist is functional first!
 linkedlist = [
     ["Bob", 3],
     ["Sarah", 2],
@@ -72,4 +73,5 @@ def delete(linkedlist):
     #check if this works!
 
 #add(linkedlist)
-delete(linkedlist)
+#delete(linkedlist)
+#traverse(linkedlist)
