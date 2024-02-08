@@ -2,6 +2,8 @@ data = 0       #makes it conceptually easier to see
 pointer = 1
 head = 0
 
+print(f"Head is {str(head)}")
+
 linkedlist = [
     ["Bob", 3],
     ["Sarah", 2],
@@ -43,20 +45,31 @@ def add(linkedlist):
     print(linkedlist)
 
 def delete(linkedlist):
+    check1 = False
+    check2 = False
+    check3 = False
     print(linkedlist)
     delete = input("Delete: ")
     for i in range(0,len(linkedlist)):
         if linkedlist[i][data] == delete:
-            save3 = linkedlist[i][pointer]
-    for i in range(0,len(linkedlist)):
-        if linkedlist[linkedlist[i][pointer]][pointer] == save3
-            save4 = i
-    linkedlist[save4][pointer] = save3
-    linkedlist[save3][data] = None
-    linkedlist[save3][pointer] = None
+            nextspointer = linkedlist[i][pointer]
+            ii = i
+            check1 = True
+    if check1 == True:
+        for i in range(0,len(linkedlist)):
+            if linkedlist[i][pointer] == ii:
+                check2 = True
+                check3 = True
+                previ = int(i)
+        if check3 == True:
+            linkedlist[previ][pointer] = nextspointer
+            linkedlist[ii][data] = None
+            linkedlist[ii][pointer] = None
+        else:
+            linkedlist[ii][data] = None
+            linkedlist[ii][pointer] = None
     print(linkedlist)
     #check if this works!
 
-add(linkedlist)
+#add(linkedlist)
 delete(linkedlist)
-#need to fix the adding name part, current error is the added name replacing "Sharon"
