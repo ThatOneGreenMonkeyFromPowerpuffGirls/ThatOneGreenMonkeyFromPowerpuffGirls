@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 cars = []
 maxlen = 6
 top = len(cars)
